@@ -6,8 +6,8 @@ public class Pet : MonoBehaviour
 {
     [SerializeField] private GameObject hearts;
     [SerializeField] private float offset;
-    [SerializeField]
-    
+    [SerializeField] private StatsTracker stats;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class Pet : MonoBehaviour
 
     public void OnHoverEnter()
     {
-        Instantiate(hearts, transform.position + Vector3.up * offset);
+        Instantiate(hearts, transform.position + Vector3.up * offset, Quaternion.identity);
+        stats.IncreaseAffection(1);
     }
 }
