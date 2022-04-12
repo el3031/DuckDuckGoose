@@ -12,12 +12,13 @@ public class StatsTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        affection = PlayerPrefs.GetInt("affection", 0);
+        mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
     }
 
     public void IncreaseAffection(int i)
     {
-        affection += 1;
+        affection += i;
         affectionTracker.text = affection.ToString();
     }
 }

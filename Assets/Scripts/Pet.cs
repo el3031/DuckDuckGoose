@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class Pet : MonoBehaviour
 {
-    [SerializeField] private GameObject hearts;
+    [SerializeField] private ParticleSystem hearts;
     [SerializeField] private float offset;
     [SerializeField] private StatsTracker stats;
+    private AudioSource happyDuck;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        happyDuck = GetComponent<AudioSource>();
     }
 
     public void OnHoverEnter()
     {
-        Instantiate(hearts, transform.position + Vector3.up * offset, Quaternion.identity);
         stats.IncreaseAffection(1);
+        hearts.Play();
+        happyDuck.Play();
+    }
+
+    public void OnHoverExit()
+    {
+        happyDuck.Stop();
     }
 }
