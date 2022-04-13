@@ -22,6 +22,6 @@ public class Pet : MonoBehaviour
 
     public void OnHoverEnter()
     {
-        Instantiate(hearts, transform.position + Vector3.up * offset);
+        Instantiate(hearts, transform.position + Vector3.up * offset, Quaternion.identity);
     }
 }
