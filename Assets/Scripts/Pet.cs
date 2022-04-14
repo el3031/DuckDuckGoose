@@ -19,7 +19,10 @@ public class Pet : MonoBehaviour
     {
         stats.IncreaseAffection(1);
         hearts.Play();
-        happyDuck.Play();
+        if (!happyDuck.isPlaying)
+        {
+            happyDuck.Play();
+        }
     }
 
     public void OnHoverExit()
