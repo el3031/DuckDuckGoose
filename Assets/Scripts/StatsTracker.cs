@@ -8,15 +8,14 @@ public class StatsTracker : MonoBehaviour
     public int mushrooms;
     [SerializeField] private Text patPatTracker;
     [SerializeField] private Image[] hearts;
-    private float affection;
+    private int affection;
     
     // Start is called before the first frame update
     void Start()
     {
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
-        affection = Mathf.Floor(Random.Range(0f, 5f));
-        Debug.Log(affection);
+        affection = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
 
         patPatTracker.text = patPatTracker.ToString();
         AffectionDisplay();
@@ -24,7 +23,7 @@ public class StatsTracker : MonoBehaviour
 
     void AffectionDisplay()
     {
-        int counter = (int) Mathf.Min(Mathf.Floor(affection), hearts.Length - 1);
+        int counter = (int) Mathf.Min(affection / 10, hearts.Length);
         
         for (int i = 0; i < counter; i++)
         {
@@ -37,9 +36,12 @@ public class StatsTracker : MonoBehaviour
 
     public void IncreaseAffection(int i)
     {
-        affection += i * 0.1f;
+        affection += i;
         patPatTracker.text = affection.ToString();
 
-        AffectionDisplay();
+        if (affection % 10 == 0)
+        {
+            AffectionDisplay();
+        }
     }
 }
