@@ -28,5 +28,6 @@ public class Pet : MonoBehaviour
     public void OnHoverExit()
     {
         happyDuck.Stop();
+        Instantiate(hearts, transform.position + Vector3.up * offset, Quaternion.identity);
     }
 }
