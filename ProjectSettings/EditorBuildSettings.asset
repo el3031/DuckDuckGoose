@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MushroomAudio.unity
+    guid: cbfa543319f794e98b6dccaeb7d37e91
+  - enabled: 1
     path: Assets/Scenes/MainArea.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
