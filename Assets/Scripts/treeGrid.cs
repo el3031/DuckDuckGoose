@@ -32,97 +32,67 @@ public class treeGrid : MonoBehaviour
         {
             for (int x = 0; x < xSize; x++)
             {
-                int randCount = Random.Range(1, 10);
-                float randRotate = Random.Range(0.0f, 360.0f);
-                Debug.Log("randCount: "+ randCount);
+                int randCount = Random.Range(1, 20);
+                //float randRotate = Random.Range(0.0f, 360.0f);
+                //Debug.Log("randCount: "+ randCount);
                 if (randCount ==1)
                 {
                     //random tree collection
                     int randPrefab = Random.Range(1, 8);
-                    if (randPrefab ==1)
+                    if (randPrefab == 1)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab1, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        grid[x, y].transform.Rotate(0.0f, randRotate , 0.0f, Space.Self);
-                        Debug.Log("tree option 1 created");
+                        create_prefab(x, y, gridCellPrefab1);
                     }
+
                     else if (randPrefab == 2)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab2, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 2 created");
+                        create_prefab(x, y, gridCellPrefab2);
                     }
+
                     else if (randPrefab == 3)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab3, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 3 created");
+                        create_prefab(x, y, gridCellPrefab3);
                     }
+
                     else if (randPrefab == 4)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab4, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 4 created");
+                        create_prefab(x, y, gridCellPrefab4);
                     }
+
                     else if (randPrefab == 5)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab5, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 5 created");
+                        create_prefab(x, y, gridCellPrefab5);
                     }
+
                     else if (randPrefab == 6)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab6, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 6 created");
+                        create_prefab(x, y, gridCellPrefab6);
                     }
+
                     else if (randPrefab == 7)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab7, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 7 created");
+                        create_prefab(x, y, gridCellPrefab7);
                     }
+
                     else if (randPrefab == 8)
                     {
-                        grid[x, y] = Instantiate(gridCellPrefab8, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                        grid[x, y].transform.parent = transform;
-                        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
-                        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
-                        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 8 created");
+                        create_prefab(x, y, gridCellPrefab8);
                     }
-
-                    //grid[x, y].transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-
-
-                    //grid[x, y] = Instantiate(gridCellPrefab1, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                    //Debug.Log("tree created");
                 }
-                //grid[x,y] = Instantiate(gridCellPrefab, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                //Instantiate(gridCellPrefab, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
-                //treeGrid[x, y].transform.parent = transform;
-                //Debug.Log("block created");
+
             }
         }
+    }
+
+    private void create_prefab(int x, int y, GameObject prefab_obj)
+    {
+        float randRotate = Random.Range(0.0f, 360.0f);
+        grid[x, y] = Instantiate(prefab_obj, new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize), Quaternion.identity);
+        grid[x, y].transform.parent = transform;
+        grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
+        //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
+        grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
+        //Debug.Log("tree option 8 created");
     }
 
 }
