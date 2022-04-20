@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Mushroom
+  - BaggedMushroom
   layers:
   - Default
   - TransparentFX
