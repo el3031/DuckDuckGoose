@@ -31,6 +31,8 @@ public class StatsTracker : MonoBehaviour
         affection = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
         hunger = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
 
+        patPatTracker.text = "Affection: " + affection.ToString();
+        hungerTracker.text = "Hunger: " + hunger.ToString();
         AffectionDisplay();
         HungerDisplay();
     }

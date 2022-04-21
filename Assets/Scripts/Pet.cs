@@ -47,7 +47,12 @@ public class Pet : MonoBehaviour
         )
         {
             stats.IncreaseAffection(5);
-            stats.IncreaseHungerBar(2);
+            Instantiate(hearts,
+            transform.position + Vector3.up * offset,
+            Quaternion.identity);
+            int hungerIncrease = (int) Mathf.Floor(Random.Range(2f, 5f));
+            stats.IncreaseHungerBar (hungerIncrease);
+            Destroy(other.gameObject);
         }
     }
 }
