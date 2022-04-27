@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainAreaCustom : MonoBehaviour
 {
     [SerializeField] private Material selectedMaterial;
+    [SerializeField] private SelectionTracker selectionTracker;
     private Material originalMaterial;
     private Renderer r;
 
@@ -18,11 +19,11 @@ public class MainAreaCustom : MonoBehaviour
     
     public void OnHoverEnter()
     {
-        r.material = selectedMaterial;
+        selectionTracker.selected = this.gameObject;
     }
 
     public void OnHoverExit()
     {
-        r.material = originalMaterial;
+        selectionTracker.selected = null;
     }
 }
