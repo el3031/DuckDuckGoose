@@ -26,4 +26,17 @@ public class MainAreaCustom : MonoBehaviour
     {
         selectionTracker.selected = null;
     }
+
+    public void OnSelectExit()
+    {
+        float timer = 0.5f;
+        float time = 0f;
+
+        Quaternion correctRotation = Quaternion.Euler(new Vector3(0f, transform.rotation.y, 0f));
+        while (time < timer)
+        {
+            time += Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(transform.rotation, correctRotation, Time.deltaTime * time / timer);
+        }
+    }
 }

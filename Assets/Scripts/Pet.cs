@@ -13,6 +13,9 @@ public class Pet : MonoBehaviour
     [SerializeField]
     private StatsTracker stats;
 
+    [SerializeField]
+    private AudioSource growthFactor;
+
     private AudioSource happyDuck;
 
     // Start is called before the first frame update
@@ -53,6 +56,8 @@ public class Pet : MonoBehaviour
             int hungerIncrease = (int) Mathf.Floor(Random.Range(2f, 5f));
             stats.IncreaseHungerBar (hungerIncrease);
             Destroy(other.gameObject);
+
+            transform.localScale += Vector3.one * growthFactor;
         }
     }
 }

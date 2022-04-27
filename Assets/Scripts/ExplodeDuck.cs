@@ -7,7 +7,7 @@ public class ExplodeDuck : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
     
-    public void Explode()
+    public static void Explode()
     {
         
         StartCoroutine(ExplodeAndRestart());
