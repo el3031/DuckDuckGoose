@@ -10,7 +10,7 @@ public class ExplodeDuck : MonoBehaviour
     public static void Explode()
     {
         
-        StartCoroutine(ExplodeAndRestart());
+        //StartCoroutine(ExplodeAndRestart());
     }
 
     IEnumerator ExplodeAndRestart()
