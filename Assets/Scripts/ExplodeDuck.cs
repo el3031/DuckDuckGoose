@@ -9,7 +9,6 @@ public class ExplodeDuck : MonoBehaviour
     
     public void Explode()
     {
-        
         StartCoroutine(ExplodeAndRestart());
     }
 
