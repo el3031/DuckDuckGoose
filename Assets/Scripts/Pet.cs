@@ -14,7 +14,7 @@ public class Pet : MonoBehaviour
     private StatsTracker stats;
 
     [SerializeField]
-    private float growthFactor = 0.003f;
+    private float growthFactor = 0.002f;
 
     private AudioSource happyDuck;
 
@@ -24,16 +24,16 @@ public class Pet : MonoBehaviour
     void Start()
     {
         happyDuck = GetComponent<AudioSource>();
-        size = System.Math.Round(growthFactor * stats.hunger, 2);
+        size = System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f;
         transform.localScale =
             new Vector3((float) size, (float) size, (float) size);
     }
 
     void Update()
     {
-        if (size != System.Math.Round(growthFactor * stats.hunger, 2))
+        if (size != System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f)
         {
-            size = System.Math.Round(growthFactor * stats.hunger, 2);
+            size = System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f;
             transform.localScale =
                 new Vector3((float) size, (float) size, (float) size);
         }
