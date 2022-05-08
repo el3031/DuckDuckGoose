@@ -23,7 +23,6 @@ public class ShowStats : MonoBehaviour
     void FixedUpdate()
     {
         waitTime += 0.02f;
-        Debug.Log (waitTime);
         float distance =
             Vector3.Distance(transform.position, cam.transform.position);
         if (waitTime < 7)

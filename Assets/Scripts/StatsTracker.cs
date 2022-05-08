@@ -22,7 +22,7 @@ public class StatsTracker : MonoBehaviour
 
     private int affection;
 
-    private int hunger;
+    public int hunger;
 
     public GameObject duck;
 
@@ -33,8 +33,8 @@ public class StatsTracker : MonoBehaviour
 
         affection = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
 
-        // hunger = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
-        hunger = 45;
+        hunger = 10 * (int) Mathf.Floor(Random.Range(1f, 3f));
+        // hunger = 45;
         patPatTracker.text = "Affection: " + affection.ToString();
         hungerTracker.text = "Fullness: " + hunger.ToString();
         AffectionDisplay();
