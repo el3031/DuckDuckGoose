@@ -7,6 +7,7 @@ public class Generate_Mushroom : MonoBehaviour
     private GameObject[] mushroomObj;
     private int xSize = 50;
     private int ySize = 50;
+    private int bufferDist = 10;
     private float GridSpaceSize = 1f; //will have to change to include scaling later
     private GameObject[,] grid;
     private List<Vector3> mushroom_Dist = new List<Vector3>();
@@ -17,7 +18,7 @@ public class Generate_Mushroom : MonoBehaviour
     void Start()
     {
         grid = new GameObject[xSize, ySize];
-        maxDist = mushroomMonsterObj.GetComponent<AudioSource>().maxDistance;
+        maxDist = mushroomMonsterObj.GetComponent<AudioSource>().maxDistance + bufferDist;
         Debug.Log("mushroom audio distance: " + maxDist);
     }
 
@@ -33,12 +34,12 @@ public class Generate_Mushroom : MonoBehaviour
     private void checkMushroomNum()
     {
         bool isaddMushroom = true;
-        mushroomObj = GameObject.FindGameObjectsWithTag("Mushroom_Monster");
+        mushroomObj = GameObject.FindGameObjectsWithTag("Mushroom");
         if(mushroomObj.Length < 5)
         {
             //assign x and y positions
-            int x = Random.Range(1, xSize);
-            int y = Random.Range(1, ySize);
+            int x = Random.Range(1, xSize-5);
+            int y = Random.Range(1, ySize-5);
             Vector3 new_pos = new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize);
 
             //update mushroom position list
@@ -54,6 +55,10 @@ public class Generate_Mushroom : MonoBehaviour
                 {
                     isaddMushroom = false;
                 }
+                //else
+                //{
+                //    Debug.Log("Good Distance: " + Vector3.Distance(pos, new_pos));
+                //}
             }
 
             //generate mushroom
