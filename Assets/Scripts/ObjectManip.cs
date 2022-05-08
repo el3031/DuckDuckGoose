@@ -40,8 +40,6 @@ public class ObjectManip : MonoBehaviour
         }
     }
     
-
-    
     private void FixedUpdate()
     {
         float val = rotateReference.action.ReadValue<float>();
@@ -60,7 +58,6 @@ public class ObjectManip : MonoBehaviour
             Vector3 addPos = new Vector3(translateVal.x, 0f, translateVal.y);
             transform.position += addPos;
         }
-        //timeToGo = Time.fixedTime + 0.5f;
     }
     
    
@@ -74,35 +71,4 @@ public class ObjectManip : MonoBehaviour
             selectionTracker.selected.transform.Rotate(0f, val * rotateIncrement, 0f, Space.Self);
         }
     }
-    
-
-    /*
-    private void Roe(Vector2 val)
-    {
-        if (val.y == 1 && val.x == 0)
-        {
-            gameObject.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
-        }
-        else if (val.y == -1 && val.x == 0)
-        {
-            gameObject.transform.Rotate(0.0f, 0.0f, -90.0f, Space.Self);
-        }
-        else if (val.x > 0.8)
-        {
-            gameObject.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
-        }
-        else if (val.x < -0.8)
-        {
-            gameObject.transform.Rotate(-90.0f, 0.0f, 0.0f, Space.Self);
-        }
-        else if (val.y > 0.8)
-        {
-            gameObject.transform.Rotate(0.0f, 90.0f, 0.0f, Space.Self);
-        }
-        else if (val.y < -0.8)
-        {
-            gameObject.transform.Rotate(0.0f, -90.0f, 0.0f, Space.Self);
-        }
-    }
-    */
 }
