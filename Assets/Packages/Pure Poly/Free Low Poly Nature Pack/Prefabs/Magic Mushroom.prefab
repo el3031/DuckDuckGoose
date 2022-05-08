@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1024432734895927491}
   m_Layer: 0
   m_Name: Magic Mushroom
-  m_TagString: Untagged
+  m_TagString: Mushroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
