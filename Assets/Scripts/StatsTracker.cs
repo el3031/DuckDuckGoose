@@ -44,6 +44,7 @@ public class StatsTracker : MonoBehaviour
 
     void decreaseHunger()
     {
+        duck.GetComponent<ShowStats>().waitTime = 0f;
         if (hunger > 0)
         {
             hunger -= (int) Mathf.Floor(Random.Range(1f, 4f));
@@ -95,6 +96,7 @@ public class StatsTracker : MonoBehaviour
 
     public void IncreaseAffection(int i)
     {
+        duck.GetComponent<ShowStats>().waitTime = 0f;
         affection += i;
         patPatTracker.text = "Affection: " + affection.ToString();
 
@@ -106,6 +108,7 @@ public class StatsTracker : MonoBehaviour
 
     public void IncreaseHungerBar(int i)
     {
+        duck.GetComponent<ShowStats>().waitTime = 0f;
         hunger += i;
         hungerTracker.text = "Fullness: " + hunger.ToString();
         if (hunger > 50)

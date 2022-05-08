@@ -8,30 +8,37 @@ public class ShowStats : MonoBehaviour
 
     public Camera cam;
 
+    public float waitTime;
+
+    public bool withinRange;
+
+    public float oldDistance;
+
     // Start is called before the first frame update
     void Start()
     {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        waitTime += 0.02f;
+        Debug.Log (waitTime);
         float distance =
             Vector3.Distance(transform.position, cam.transform.position);
-        Debug.Log (distance);
-        if (distance < 4)
+        if (waitTime < 7)
         {
-            if (!canvas.enabled)
-            {
-                canvas.enabled = true;
-            }
+            if (!canvas.enabled) canvas.enabled = true;
         }
         else
         {
-            if (canvas.enabled)
-            {
-                canvas.enabled = false;
-            }
+            if (canvas.enabled) canvas.enabled = false;
         }
+        if (oldDistance > 4 && distance < 4)
+        {
+            if (!canvas.enabled) canvas.enabled = true;
+            waitTime = 0;
+        }
+        oldDistance = distance;
     }
 }

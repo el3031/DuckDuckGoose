@@ -10,6 +10,7 @@ public class Pet : MonoBehaviour
     [SerializeField]
     private float offset;
 
+
     [SerializeField]
     private StatsTracker stats;
 
