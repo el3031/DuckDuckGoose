@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class treeGrid : MonoBehaviour
 {
-    private int xSize = 50;
-    private int ySize = 50;
+    private int xSize = 10;
+    private int ySize = 10;
     private float GridSpaceSize = 1f; //will have to change to include scaling later
 
     private GameObject[,] grid;
