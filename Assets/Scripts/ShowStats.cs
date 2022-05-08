@@ -19,7 +19,7 @@ public class ShowStats : MonoBehaviour
         float distance =
             Vector3.Distance(transform.position, cam.transform.position);
         Debug.Log (distance);
-        if (distance < 1.6)
+        if (distance < 4)
         {
             if (!canvas.enabled)
             {
