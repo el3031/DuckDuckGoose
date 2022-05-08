@@ -14,7 +14,7 @@ public class Pet : MonoBehaviour
     private StatsTracker stats;
 
     [SerializeField]
-    private AudioSource growthFactor;
+    private float growthFactor;
 
     private AudioSource happyDuck;
 
