@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - Mushroom
   - BaggedMushroom
+  - Mushroom_Monster
   layers:
   - Default
   - TransparentFX

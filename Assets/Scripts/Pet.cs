@@ -57,7 +57,7 @@ public class Pet : MonoBehaviour
             stats.IncreaseHungerBar (hungerIncrease);
             Destroy(other.gameObject);
 
-            transform.localScale += Vector3.one * growthFactor;
+            //transform.localScale += Vector3.one * growthFactor;
         }
     }
 }
