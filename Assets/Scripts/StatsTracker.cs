@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatsTracker : MonoBehaviour
@@ -23,18 +24,40 @@ public class StatsTracker : MonoBehaviour
 
     private int hunger;
 
+    public GameObject duck;
+
     // Start is called before the first frame update
     void Start()
     {
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
         affection = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
-        hunger = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
 
+        // hunger = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
+        hunger = 45;
         patPatTracker.text = "Affection: " + affection.ToString();
-        hungerTracker.text = "Hunger: " + hunger.ToString();
+        hungerTracker.text = "Fullness: " + hunger.ToString();
         AffectionDisplay();
         HungerDisplay();
+        InvokeRepeating("decreaseHunger", 30.0f, 60.0f);
+    }
+
+    void decreaseHunger()
+    {
+        if (hunger > 0)
+        {
+            hunger -= (int) Mathf.Floor(Random.Range(1f, 4f));
+            HungerDisplay();
+        }
+        if (hunger < 0)
+        {
+            // yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("gameOver");
+        }
+    }
+
+    void Update()
+    {
     }
 
     void AffectionDisplay()
@@ -52,12 +75,19 @@ public class StatsTracker : MonoBehaviour
 
     void HungerDisplay()
     {
+        hungerTracker.text = "Fullness: " + hunger.ToString();
         int counter = (int) Mathf.Min(hunger / 10, hungerIcons.Length);
-
         for (int i = 0; i < counter; i++)
         {
             Color c = hungerIcons[i].color;
             c.a = 1f;
+
+            hungerIcons[i].color = c;
+        }
+        for (int i = counter; i < hungerIcons.Length; i++)
+        {
+            Color c = hungerIcons[i].color;
+            c.a = 0.5f;
 
             hungerIcons[i].color = c;
         }
@@ -77,8 +107,11 @@ public class StatsTracker : MonoBehaviour
     public void IncreaseHungerBar(int i)
     {
         hunger += i;
-        hungerTracker.text = "Hunger: " + hunger.ToString();
-
+        hungerTracker.text = "Fullness: " + hunger.ToString();
+        if (hunger > 50)
+        {
+            duck.GetComponent<ExplodeDuck>().Explode();
+        }
         if (hunger % 10 == 0)
         {
             HungerDisplay();

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1527444333}
   - component: {fileID: 1527444332}
   - component: {fileID: 1527444334}
-  - component: {fileID: 1527444339}
   m_Layer: 0
   m_Name: Fantasy_House_6
   m_TagString: Untagged
@@ -97,7 +96,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 318351b249902a44ea6748a84674a269, type: 3}
 --- !u!54 &1527444333
@@ -114,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1527444332
 MonoBehaviour:
@@ -184,7 +183,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1527444334}
+        m_TargetAssemblyTypeName: MainAreaCustom, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -269,25 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedMaterial: {fileID: 2100000, guid: 013cb2d2de2a8447b96f180c501ee058, type: 2}
   selectionTracker: {fileID: 0}
---- !u!114 &1527444339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4017359017750083363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e116fd29556eb469fb2ad0538129c0b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionTracker: {fileID: 0}
   rotateReference: {fileID: -4184897479251490882, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   translateReference: {fileID: -1756650123317780179, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  rotateIncrement: 10
+  rotateIncrement: 5
   translateIncrement: 0.5
-  rotate: {fileID: 0}
-  translate: {fileID: 0}
-  rotateScriptActive: 0
