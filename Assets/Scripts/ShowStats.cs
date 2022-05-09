@@ -10,9 +10,9 @@ public class ShowStats : MonoBehaviour
 
     public float waitTime;
 
-    public bool withinRange;
+    private bool withinRange;
 
-    public float oldDistance;
+    private float oldDistance;
 
     // Start is called before the first frame update
     void Start()
