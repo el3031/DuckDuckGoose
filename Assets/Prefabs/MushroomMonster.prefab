@@ -221,11 +221,9 @@ GameObject:
   - component: {fileID: 1816295408737017967}
   - component: {fileID: 1813485901836850893}
   - component: {fileID: 1783288509156106437}
-  - component: {fileID: 3450015087955507796}
   - component: {fileID: 2036401220612695800}
   - component: {fileID: 4248412681731856818}
   - component: {fileID: -1925850210848167233}
-  - component: {fileID: -1551206967621339369}
   m_Layer: 0
   m_Name: MushroomMonster
   m_TagString: Mushroom
@@ -241,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782135018157200779}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1778908374101993049}
@@ -377,18 +375,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3450015087955507796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782135018157200779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0b63564a4e44010990363b96c1b948, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2036401220612695800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -447,7 +433,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3450015087955507796}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Mushroom, Assembly-CSharp
         m_MethodName: OnGrabFromGround
         m_Mode: 0
@@ -556,16 +542,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0b63564a4e44010990363b96c1b948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-1551206967621339369
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782135018157200779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.8111277, y: 3.9520078, z: 5.3586407}
-  m_Center: {x: -0.3903377, y: 1.5155029, z: 0.1977545}
