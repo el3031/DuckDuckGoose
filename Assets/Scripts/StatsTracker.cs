@@ -31,25 +31,38 @@ public class StatsTracker : MonoBehaviour
     {
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
-        affection = 10 * (int) Mathf.Floor(Random.Range(0f, 3f));
+        affection =
+            PlayerPrefs
+                .GetInt("hunger", (int)(10 * Random.Range(0f, 3f)));
+        hunger =
+            PlayerPrefs
+                .GetInt("hunger", (int) (10 * Random.Range(1f, 3f)));
 
-        hunger = 10 * (int) Mathf.Floor(Random.Range(1f, 3f));
+        hunger -= PlayerPrefs.GetInt("removeHunger", 0);
+        checkHunger();
 
+        PlayerPrefs.DeleteKey("removeHunger");
         patPatTracker.text = "Affection: " + affection.ToString();
         hungerTracker.text = "Fullness: " + hunger.ToString();
         AffectionDisplay();
         HungerDisplay();
         InvokeRepeating("decreaseHunger",
-        10.0f,
-        10 * (int) Mathf.Floor(Random.Range(3f, 4f)));
+        20.0f,
+        10 * (int) Mathf.Floor(Random.Range(4f, 5f)));
     }
 
-    void decreaseHunger()
+    public void decreaseHunger()
     {
+        int hungerDecrease = (int) Mathf.Floor(Random.Range(3f, 7f));
         duck.GetComponent<ShowStats>().waitTime = 0f;
+        hunger -= hungerDecrease;
+        checkHunger();
+    }
+
+    public void checkHunger()
+    {
         if (hunger > 0)
         {
-            hunger -= (int) Mathf.Floor(Random.Range(1f, 4f));
             HungerDisplay();
         }
         if (hunger < 0)
