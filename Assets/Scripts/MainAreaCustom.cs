@@ -90,6 +90,7 @@ public class MainAreaCustom : MonoBehaviour
         if (gameObject == selectionTracker.selected && translateVal != Vector2.zero)
         {
             Vector3 addPos = (translateVal.x * Camera.main.transform.right + translateVal.y * Camera.main.transform.forward).normalized * translateIncrement; 
+            addPos = new Vector3(addPos.x, 0f, addPos.z);
             transform.position += addPos;
         }
     }
