@@ -32,20 +32,20 @@ public class StatsTracker : MonoBehaviour
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
         affection =
-            PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(0f, 3f)));
+            PlayerPrefs.GetInt("affection", (int)(10 * Random.Range(0f, 3f)));
         hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(1f, 3f)));
 
         hunger -= PlayerPrefs.GetInt("removeHunger", 0);
         checkHunger();
 
-        PlayerPrefs.DeleteKey("removeHunger");
+        PlayerPrefs.SetInt("removeHunger", 0);
         patPatTracker.text = "Affection: " + affection.ToString();
         hungerTracker.text = "Fullness: " + hunger.ToString();
         AffectionDisplay();
         HungerDisplay();
         InvokeRepeating("decreaseHunger",
         20.0f,
-        10 * (int) Mathf.Floor(Random.Range(4f, 5f)));
+        10 * (int) Mathf.Floor(Random.Range(3f, 4f)));
     }
 
     public void decreaseHunger()

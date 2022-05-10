@@ -50,7 +50,7 @@ public class Sack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Mushroom")
         {
-            PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 1) + 1);
+            PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 0) + 1);
             SpawnMushroom();
             Destroy(collision.gameObject);
             // stats.IncreaseMushroom();

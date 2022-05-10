@@ -20,10 +20,10 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     public void Restart()
     {
-        PlayerPrefs.DeleteKey("hunger");
-        PlayerPrefs.DeleteKey("affection");
-        PlayerPrefs.DeleteKey("mushrooms");
-        PlayerPrefs.DeleteKey("timeElapsed");
+        PlayerPrefs.SetInt("affection", (int)(10 * Random.Range(0f, 3f)));
+        PlayerPrefs.SetInt("hunger", (int)(10 * Random.Range(1f, 3f)));
+        PlayerPrefs.SetInt("mushrooms", 0);
+        PlayerPrefs.SetFloat("timeElapsed", 0);
         GetComponent<SceneTransitions>().OnNextScene();
     }
 }
