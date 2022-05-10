@@ -6,8 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Sack : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private StatsTracker stats;
 
     private int mushroomCount = 0;
 
