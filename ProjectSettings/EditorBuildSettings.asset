@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ObjectManip.unity
     guid: 9ad035cce659e4a0d9693e56e9c52a5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ForestMap.unity
     guid: c37874d27539c4e4eb0aa5bdee9d115e
   m_configObjects:
