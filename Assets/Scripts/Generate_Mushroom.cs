@@ -40,7 +40,8 @@ public class Generate_Mushroom : MonoBehaviour
             //assign x and y positions
             int x = Random.Range(1, xSize-5);
             int y = Random.Range(1, ySize-5);
-            Vector3 new_pos = new Vector3(x * GridSpaceSize, 0, y * GridSpaceSize);
+            Vector3 new_pos = new Vector3(x * GridSpaceSize, 0.2f, y * GridSpaceSize);
+            
 
             //update mushroom position list
             if (mushroom_Dist.Count >= 5)

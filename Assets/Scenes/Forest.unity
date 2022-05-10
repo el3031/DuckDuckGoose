@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 1782135018157200779, guid: 78a1fc61593ce44aebc40647a8513e4e,
         type: 3}
       propertyPath: m_TagString
-      value: Mushroom_Monster
+      value: BaggedMushroom
       objectReference: {fileID: 0}
     - target: {fileID: 1783288509156106437, guid: 78a1fc61593ce44aebc40647a8513e4e,
         type: 3}
@@ -594,6 +594,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MushroomMonster
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782135018157200779, guid: 78a1fc61593ce44aebc40647a8513e4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a1fc61593ce44aebc40647a8513e4e, type: 3}
