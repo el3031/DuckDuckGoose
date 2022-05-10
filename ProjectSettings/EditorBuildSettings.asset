@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainArea.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: dc3672ebca9a74d8aa315b0eee0a94d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/gameOver.unity
     guid: c2942f3352cb147dcbe7211bf517b6b5
   - enabled: 0
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ForestMap.unity
     guid: c37874d27539c4e4eb0aa5bdee9d115e
+  - enabled: 0
+    path: Assets/Scenes/handSwitch.unity
+    guid: 5697b159b9e0a4b6e92c259e1e77d272
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
