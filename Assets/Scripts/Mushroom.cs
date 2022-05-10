@@ -16,9 +16,10 @@ public class Mushroom : MonoBehaviour
     public void GrabMushroom(SelectEnterEventArgs interactor)
     {
         transform.parent = null;
-        transform.localScale = new Vector3(1, 1, 1);
+        transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         rb.constraints = RigidbodyConstraints.None;
         transform.rotation = Quaternion.identity;
+        gameObject.GetComponent<AudioSource>().Stop();
         gameObject
             .GetComponent<XRGrabInteractable>()
             .selectEntered
@@ -28,6 +29,7 @@ public class Mushroom : MonoBehaviour
     public void OnGrabFromGround(SelectEnterEventArgs interactor)
     {
         rb.constraints = RigidbodyConstraints.None;
+        gameObject.GetComponent<AudioSource>().Stop();
     }
 
     // public void GrabMushroom()
@@ -47,6 +49,8 @@ public class Mushroom : MonoBehaviour
     public void SetMushroomTag(SelectExitEventArgs interactor)
     {
         gameObject.tag = "Mushroom";
+        gameObject.GetComponent<AudioSource>().Stop();
+        transform.parent = null;
         GetComponent<XRGrabInteractable>()
             .selectExited
             .RemoveListener(SetMushroomTag);

@@ -34,7 +34,7 @@ public class treeGrid : MonoBehaviour
             {
                 int randCount = Random.Range(1, 10);
                 float randRotate = Random.Range(0.0f, 360.0f);
-                Debug.Log("randCount: "+ randCount);
+                //Debug.Log("randCount: "+ randCount);
                 if (randCount ==1)
                 {
                     //random tree collection
@@ -45,7 +45,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.parent = transform;
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         grid[x, y].transform.Rotate(0.0f, randRotate , 0.0f, Space.Self);
-                        Debug.Log("tree option 1 created");
+                        //Debug.Log("tree option 1 created");
                     }
                     else if (randPrefab == 2)
                     {
@@ -54,7 +54,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 2 created");
+                        //Debug.Log("tree option 2 created");
                     }
                     else if (randPrefab == 3)
                     {
@@ -63,7 +63,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 3 created");
+                        //Debug.Log("tree option 3 created");
                     }
                     else if (randPrefab == 4)
                     {
@@ -72,7 +72,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 4 created");
+                        //Debug.Log("tree option 4 created");
                     }
                     else if (randPrefab == 5)
                     {
@@ -81,7 +81,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 5 created");
+                        //Debug.Log("tree option 5 created");
                     }
                     else if (randPrefab == 6)
                     {
@@ -90,7 +90,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 6 created");
+                        //Debug.Log("tree option 6 created");
                     }
                     else if (randPrefab == 7)
                     {
@@ -99,7 +99,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 7 created");
+                        //Debug.Log("tree option 7 created");
                     }
                     else if (randPrefab == 8)
                     {
@@ -108,7 +108,7 @@ public class treeGrid : MonoBehaviour
                         grid[x, y].transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f);
                         //grid[x, y].transform.Rotate(0.0f, 0.0f, 0.0f, Space.Self);
                         grid[x, y].transform.Rotate(0.0f, randRotate, 0.0f, Space.Self);
-                        Debug.Log("tree option 8 created");
+                        //Debug.Log("tree option 8 created");
                     }
 
                     //grid[x, y].transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
@@ -126,3 +126,5 @@ public class treeGrid : MonoBehaviour
     }
 
 }
+
+
