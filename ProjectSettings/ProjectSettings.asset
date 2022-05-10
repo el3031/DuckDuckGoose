@@ -237,8 +237,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+<<<<<<< HEAD
   - {fileID: 0}
   - {fileID: 0}
+=======
+>>>>>>> origin/main
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
