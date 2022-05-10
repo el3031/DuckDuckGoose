@@ -32,11 +32,8 @@ public class StatsTracker : MonoBehaviour
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
         affection =
-            PlayerPrefs
-                .GetInt("hunger", (int)(10 * Random.Range(0f, 3f)));
-        hunger =
-            PlayerPrefs
-                .GetInt("hunger", (int) (10 * Random.Range(1f, 3f)));
+            PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(0f, 3f)));
+        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(1f, 3f)));
 
         hunger -= PlayerPrefs.GetInt("removeHunger", 0);
         checkHunger();
@@ -65,8 +62,13 @@ public class StatsTracker : MonoBehaviour
         {
             HungerDisplay();
         }
-        if (hunger < 0)
+        if (hunger < 0 || hunger > 50)
         {
+            if (hunger > 50)
+            {
+                duck.GetComponent<ExplodeDuck>().Explode();
+            }
+
             // yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("gameOver");
         }
@@ -126,10 +128,7 @@ public class StatsTracker : MonoBehaviour
         duck.GetComponent<ShowStats>().waitTime = 0f;
         hunger += i;
         hungerTracker.text = "Fullness: " + hunger.ToString();
-        if (hunger > 50)
-        {
-            duck.GetComponent<ExplodeDuck>().Explode();
-        }
+        checkHunger();
         if (hunger % 10 == 0)
         {
             HungerDisplay();
