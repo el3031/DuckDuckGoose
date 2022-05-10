@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
         PlayerPrefs.SetInt("affection", (int)(10 * Random.Range(0f, 3f)));
-        PlayerPrefs.SetInt("hunger", (int)(10 * Random.Range(2f, 3f)));
+        PlayerPrefs.SetInt("hunger", (int)(10 * Random.Range(3f, 4f)));
         PlayerPrefs.SetInt("mushrooms", 0);
         PlayerPrefs.SetFloat("timeElapsed", 0);
         GetComponent<SceneTransitions>().OnNextScene();

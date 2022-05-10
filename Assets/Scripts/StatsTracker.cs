@@ -33,7 +33,7 @@ public class StatsTracker : MonoBehaviour
 
         affection =
             PlayerPrefs.GetInt("affection", (int)(10 * Random.Range(0f, 3f)));
-        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(1f, 3f)));
+        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(2f, 3f)));
 
         hunger -= PlayerPrefs.GetInt("removeHunger", 0);
         checkHunger();

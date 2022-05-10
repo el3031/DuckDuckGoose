@@ -7,13 +7,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HandToggle : MonoBehaviour
 {
     public InputActionReference toggleReference = null;
+
     private XRInteractorLineVisual line;
 
-    // Start is called before the first frame update
+    private XRRayInteractor interactor;
 
+    // Start is called before the first frame update
     private void Awake()
     {
         line = GetComponent<XRInteractorLineVisual>();
+        interactor = GetComponent<XRRayInteractor>();
+
         toggleReference.action.started += Toggle;
     }
 
@@ -26,6 +30,14 @@ public class HandToggle : MonoBehaviour
     private void Toggle(InputAction.CallbackContext context)
     {
         bool isEnabled = line.enabled;
+        if (isEnabled)
+        {
+            interactor.maxRaycastDistance = 0.5f;
+        }
+        else
+        {
+            interactor.maxRaycastDistance = 10;
+        }
         line.enabled = !isEnabled;
     }
 }
