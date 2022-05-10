@@ -93,6 +93,7 @@ public class StatsTracker : MonoBehaviour
 
     void HungerDisplay()
     {
+        PlayerPrefs.SetInt("hunger", hunger);
         hungerTracker.text = "Fullness: " + hunger.ToString();
         int counter = (int) Mathf.Min(hunger / 10, hungerIcons.Length);
         for (int i = 0; i < counter; i++)
@@ -115,6 +116,7 @@ public class StatsTracker : MonoBehaviour
     {
         duck.GetComponent<ShowStats>().waitTime = 0f;
         affection += i;
+        PlayerPrefs.SetInt("affection", affection);
         patPatTracker.text = "Affection: " + affection.ToString();
 
         if (affection % 10 == 0)

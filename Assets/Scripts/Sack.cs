@@ -13,6 +13,7 @@ public class Sack : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetInt("mushrooms", 0));
         for (int x = 0; x < PlayerPrefs.GetInt("mushrooms", 0); x++)
         {
             SpawnMushroom();
@@ -49,7 +50,7 @@ public class Sack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Mushroom")
         {
-            PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 0) + 1);
+            PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 1) + 1);
             SpawnMushroom();
             Destroy(collision.gameObject);
             // stats.IncreaseMushroom();
