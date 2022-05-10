@@ -22,7 +22,7 @@ public class StatsTracker : MonoBehaviour
 
     private int affection;
 
-    private int hunger;
+    public int hunger;
 
     public GameObject duck;
 
@@ -31,26 +31,44 @@ public class StatsTracker : MonoBehaviour
     {
         mushrooms = PlayerPrefs.GetInt("mushrooms", 0);
 
-        affection = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
+        affection =
+            PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(0f, 3f)));
+        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(1f, 3f)));
 
-        // hunger = 10 * (int) Mathf.Floor(Random.Range(0f, 5f));
-        hunger = 45;
+        hunger -= PlayerPrefs.GetInt("removeHunger", 0);
+        checkHunger();
+
+        PlayerPrefs.DeleteKey("removeHunger");
         patPatTracker.text = "Affection: " + affection.ToString();
         hungerTracker.text = "Fullness: " + hunger.ToString();
         AffectionDisplay();
         HungerDisplay();
-        InvokeRepeating("decreaseHunger", 30.0f, 60.0f);
+        InvokeRepeating("decreaseHunger",
+        20.0f,
+        10 * (int) Mathf.Floor(Random.Range(4f, 5f)));
     }
 
-    void decreaseHunger()
+    public void decreaseHunger()
+    {
+        int hungerDecrease = (int) Mathf.Floor(Random.Range(3f, 7f));
+        duck.GetComponent<ShowStats>().waitTime = 0f;
+        hunger -= hungerDecrease;
+        checkHunger();
+    }
+
+    public void checkHunger()
     {
         if (hunger > 0)
         {
-            hunger -= (int) Mathf.Floor(Random.Range(1f, 4f));
             HungerDisplay();
         }
-        if (hunger < 0)
+        if (hunger < 0 || hunger > 50)
         {
+            if (hunger > 50)
+            {
+                duck.GetComponent<ExplodeDuck>().Explode();
+            }
+
             // yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("gameOver");
         }
@@ -95,6 +113,7 @@ public class StatsTracker : MonoBehaviour
 
     public void IncreaseAffection(int i)
     {
+        duck.GetComponent<ShowStats>().waitTime = 0f;
         affection += i;
         patPatTracker.text = "Affection: " + affection.ToString();
 
@@ -106,12 +125,10 @@ public class StatsTracker : MonoBehaviour
 
     public void IncreaseHungerBar(int i)
     {
+        duck.GetComponent<ShowStats>().waitTime = 0f;
         hunger += i;
         hungerTracker.text = "Fullness: " + hunger.ToString();
-        if (hunger > 50)
-        {
-            duck.GetComponent<ExplodeDuck>().Explode();
-        }
+        checkHunger();
         if (hunger % 10 == 0)
         {
             HungerDisplay();

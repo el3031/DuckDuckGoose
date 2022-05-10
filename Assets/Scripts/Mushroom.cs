@@ -48,6 +48,7 @@ public class Mushroom : MonoBehaviour
     // }
     public void SetMushroomTag(SelectExitEventArgs interactor)
     {
+        PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 0) - 1);
         gameObject.tag = "Mushroom";
         gameObject.GetComponent<AudioSource>().Stop();
         transform.parent = null;

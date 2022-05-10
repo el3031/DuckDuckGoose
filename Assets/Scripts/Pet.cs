@@ -14,14 +14,29 @@ public class Pet : MonoBehaviour
     private StatsTracker stats;
 
     [SerializeField]
-    private float growthFactor;
+    private float growthFactor = 0.002f;
 
     private AudioSource happyDuck;
+
+    private double size;
 
     // Start is called before the first frame update
     void Start()
     {
         happyDuck = GetComponent<AudioSource>();
+        size = System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f;
+        transform.localScale =
+            new Vector3((float) size, (float) size, (float) size);
+    }
+
+    void Update()
+    {
+        if (size != System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f)
+        {
+            size = System.Math.Round(growthFactor * stats.hunger, 2) + 0.03f;
+            transform.localScale =
+                new Vector3((float) size, (float) size, (float) size);
+        }
     }
 
     public void OnHoverEnter()

@@ -15,7 +15,10 @@ public class Sack : MonoBehaviour
 
     void Start()
     {
-        // int mushrooms = stats.mushrooms;
+        for (int x = 0; x < PlayerPrefs.GetInt("mushrooms", 0); x++)
+        {
+            SpawnMushroom();
+        }
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class Sack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Mushroom")
         {
+            PlayerPrefs.SetInt("mushrooms", PlayerPrefs.GetInt("mushrooms", 0) + 1);
             SpawnMushroom();
             Destroy(collision.gameObject);
             // stats.IncreaseMushroom();
