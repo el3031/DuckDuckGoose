@@ -14,7 +14,7 @@ public class SceneTransitions : MonoBehaviour
         {
             PlayerPrefs
                 .SetInt("removeHunger",
-                ((int) Mathf.Round(Time.timeSinceLevelLoad)) / 10);
+                ((int) Mathf.Round(Time.timeSinceLevelLoad)) / 30);
         }
         PlayerPrefs
             .SetFloat("timeElapsed",

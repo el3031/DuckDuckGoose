@@ -33,7 +33,7 @@ public class StatsTracker : MonoBehaviour
 
         affection =
             PlayerPrefs.GetInt("affection", (int)(10 * Random.Range(0f, 3f)));
-        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(2f, 3f)));
+        hunger = PlayerPrefs.GetInt("hunger", (int)(10 * Random.Range(3f, 4f)));
 
         hunger -= PlayerPrefs.GetInt("removeHunger", 0);
         checkHunger();
@@ -50,7 +50,7 @@ public class StatsTracker : MonoBehaviour
 
     public void decreaseHunger()
     {
-        int hungerDecrease = (int) Mathf.Floor(Random.Range(3f, 7f));
+        int hungerDecrease = (int) Mathf.Floor(Random.Range(3f, 5f));
         duck.GetComponent<ShowStats>().waitTime = 0f;
         hunger -= hungerDecrease;
         checkHunger();
