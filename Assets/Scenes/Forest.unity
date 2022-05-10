@@ -2023,9 +2023,9 @@ BoxCollider:
   m_GameObject: {fileID: 1511985846}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.005, z: 1.005}
+  m_Size: {x: 0.005, y: 0.005, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &1511985849
 MonoBehaviour:
@@ -2606,9 +2606,9 @@ BoxCollider:
   m_GameObject: {fileID: 1609242255}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.005, y: 0.005, z: 1.005}
+  m_Size: {x: 0.005, y: 0.005, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &1609242258
 MonoBehaviour:
@@ -3403,6 +3403,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1432745893}
     m_Modifications:
+    - target: {fileID: 6512876726650882315, guid: 51b09d4e9d0cd4c68872c96dd97b9672,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6512876726650882316, guid: 51b09d4e9d0cd4c68872c96dd97b9672,
         type: 3}
       propertyPath: m_RootOrder
@@ -3613,8 +3618,8 @@ MonoBehaviour:
   m_Camera: {fileID: 2011326407}
   m_OriginBaseGameObject: {fileID: 1951108704}
   m_CameraFloorOffsetObject: {fileID: 704918968}
-  m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 0.3
+  m_RequestedTrackingOriginMode: 1
+  m_CameraYOffset: 1.1176
 --- !u!4 &1951108708
 Transform:
   m_ObjectHideFlags: 0
@@ -3798,7 +3803,7 @@ BoxCollider:
   m_GameObject: {fileID: 2011326403}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.3627119, z: 1}
   m_Center: {x: 0, y: 0.18135595, z: 0}
