@@ -1095,6 +1095,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ToggleMap",
+                    "type": "Button",
+                    "id": "ed97e2a4-39bf-47cf-918a-f8c942dd646a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1172,6 +1181,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Translate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8b75822-0cff-4f0c-82bf-842100bf7c08",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

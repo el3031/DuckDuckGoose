@@ -33,8 +33,9 @@ public class Sack : MonoBehaviour
         Rigidbody rb = newMushroom.GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.constraints = RigidbodyConstraints.FreezeAll;
+        newMushroom.GetComponent<AudioSource>().Stop();
         mushroomCount += 1;
-        newMushroom.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        newMushroom.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         newMushroom.transform.localPosition = new Vector3(0, 0, 0);
         newMushroom
             .GetComponent<XRGrabInteractable>()
