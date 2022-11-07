@@ -10,7 +10,7 @@ Project title: DuckDuckGoose
 Project directory overview: In our asset folder, we have imported assets like nature pack(mushrooms, trees,etc.), mushroom monsters, Audio, VR Hands. 
 Additional folders include Scenes, Materials, Prefabs, Scripts, XR and Packages in which help us organize our resources.
 
-Video URL: https://drive.google.com/file/d/1S2yHPL9ALJAD4MUT2gXuE-uS0-PMXiJs/view?usp=sharing
+Video URL: https://youtu.be/P4uSfZCgxdI
 
 Missing features/bugs: All features specified by the final project guidelines are fully implemented in our game and there are no bugs.
 
